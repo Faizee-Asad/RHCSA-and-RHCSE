@@ -65,14 +65,14 @@ Edit virtual machine -> Adjust ram allocation (4GB Ram 4 Core) -> CD/DVD: Browse
 6. Package selection: Server with GUI, Tick all ADD-ONS
 7. Time/Date: Asia/Kolkata
 8. Installation Destination: Custom, Done, Type: Standard, Click On +, Mountpoint: (Note: 1gib = 1GB)
-
+```
 Hard Drive (60GB)
     |___ /boot (1GB)
     |___ /var (10GB)
     |___ / (40GB)
     |___ /home (4GB)
     |___ swap (4GB)
-
+```
 9. Hostname: server1
 10. Root password: redhat
 11: Local user: Name: abc, Password: redhat
