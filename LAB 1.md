@@ -3,36 +3,38 @@
 ## Task: Install RHEL8
 
 The below steps to install RHEL 9 can be used for both virtual and bare-metal deployment.
+
 Steps
-1: Insert CD drive and Power "ON" the machine.
+
+1. Insert CD drive and Power "ON" the machine.
 Note: If the machine is not boot from CD Drive then change the boot sequence form "BIOS".
-2: Choose the language then click on "Continue".
+2. Choose the language then click on "Continue".
 English - English (United States)
-3: To set the time and data, Click on "Time & Data".
-4: Select time format, then click on map to set the region and click on "Done"
+3. To set the time and data, Click on "Time & Data".
+4. Select time format, then click on map to set the region and click on "Done"
 Time/Date: Asia/Kolkata
-5: To define to packages to install in the system click on "Software selection".
-6: Click on "Server and GUI" and select all the packages then click on "Done".
-7: To define the installation disk and partitions for RHEL9, Click on "Installation Destination".
-8: Click the disk on which you want to install the OS, In "Storage Configration" select "Custom" to create partition on HHD, then click on "Done".
-9: To create partition, select partition scheme as "Standard Partition" and click on "+".
-10: Now you can see the "/" partition in SYSTEM. To create one more partition click on "+".
-11: Select mount point as "/boot" and define the capacity as "1gib then click on" Add mount point".
-12: Now you can see the "/boot" partitipn in SYSTEM.To create one more partiton click on "+".
-13: Select mount point as "/home" and define the capacity as "15gib then click on" Add mount point".
-14: Now you can see the "/home" partitipn in DATA.To create one more partiton click on "+".
-15: Select mount point as "swap" and define the capacity as "6gib then click on" Add mount point".
-16: Now you can see the "swap" partitipn in SYSTEM. We are done with all partitions, now click on "Done"
-17: Now you can see the summary of the partitions, click on "Accept Changes".
-18: To disable the kdump click on "KDUMP".
-19: Uncheck the "Enable kdump" then click on "Done".
-20: To manage the host name and the network configuration, Click on "Network & Host".
-21: By default the host name is "localhost.localdomain". Change the host name as "aserver".
-22: Click on "Begin installation".
-23: Now installation is began.To set the password click on "Root Password".
-24: Set your "Root Password" than click on "Done".
-25: To create a local user click on "User Creatation". Define Full Name and User name as "rst" and set the password as "Rst@123". Now click on Done.
-26: Once you installtion is complete it will provided you to reboot the system. Click on "Reboot".
+5. To define to packages to install in the system click on "Software selection".
+6. Click on "Server and GUI" and select all the packages then click on "Done".
+7. To define the installation disk and partitions for RHEL9, Click on "Installation Destination".
+8. Click the disk on which you want to install the OS, In "Storage Configration" select "Custom" to create partition on HHD, then click on "Done".
+9. To create partition, select partition scheme as "Standard Partition" and click on "+".
+10. Now you can see the "/" partition in SYSTEM. To create one more partition click on "+".
+11. Select mount point as "/boot" and define the capacity as "1gib then click on" Add mount point".
+12. Now you can see the "/boot" partitipn in SYSTEM.To create one more partiton click on "+".
+13. Select mount point as "/home" and define the capacity as "15gib then click on" Add mount point".
+14. Now you can see the "/home" partitipn in DATA.To create one more partiton click on "+".
+15. Select mount point as "swap" and define the capacity as "6gib then click on" Add mount point".
+16. Now you can see the "swap" partitipn in SYSTEM. We are done with all partitions, now click on "Done"
+17. Now you can see the summary of the partitions, click on "Accept Changes".
+18. To disable the kdump click on "KDUMP".
+19. Uncheck the "Enable kdump" then click on "Done".
+20. To manage the host name and the network configuration, Click on "Network & Host".
+21. By default the host name is "localhost.localdomain". Change the host name as "aserver".
+22. Click on "Begin installation".
+23. Now installation is began.To set the password click on "Root Password".
+24. Set your "Root Password" than click on "Done".
+25. To create a local user click on "User Creatation". Define Full Name and User name as "rst" and set the password as "Rst@123". Now click on Done.
+26. Once you installtion is complete it will provided you to reboot the system. Click on "Reboot".
 
 ## Task: Install RHEL9
 
