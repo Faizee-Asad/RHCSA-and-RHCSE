@@ -24,5 +24,17 @@ A -> Accounting - kya kya kiya.
 
 ## Commands for basic user management.
 ```
-# useradd jane - Adda user account.
+# useradd jane              -  Add a user account.
+# usermod -l jack jane      -  Change a username.
+# passwd jane               -  Set/Change password for a user.
+# passwd -d jane            -  Remove password from a user.
+# passwd -l harry           -  Lock a user account.
+# passwd -u harry           -  Unlock a user account.
+# su - jane                 -  Switch user on same terminal with home directory.
+# chfn harry                -  Add finger (Personal) info.
+# finger harry              -  View finger info.
+# userdel harry             -  Delete a user (without deleting home directory)
+# userdel -r harry          -  Delete a user recursively (with home directory)
+# getent passwd jane        -  Get info of a user account.
+# getent passwd             -  List all existing users.  
 ```
