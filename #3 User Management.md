@@ -21,3 +21,8 @@ A -> Accounting - kya kya kiya.
 * To secure the access of a usser, We must define a password.
 * When we create a user in linux: it gets created in locked state.
 * To unlock a user: it is mandotory to either seta password or disable password.
+
+## Commands for basic user management.
+```
+# useradd jane - Adda user account.
+```
