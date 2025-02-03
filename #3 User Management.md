@@ -57,3 +57,10 @@ A -> Accounting - kya kya kiya.
 # chage jane    - To change aging policy of a user.
 # chage -l jane - To check aging policy of a user.
 ```
+
+## Groups Management
+
+* A group is a set of multiple users.
+* With every user, a default group is created.
+* The name of default group is create.
+* 
