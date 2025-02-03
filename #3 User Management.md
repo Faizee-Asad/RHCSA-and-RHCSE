@@ -32,9 +32,28 @@ A -> Accounting - kya kya kiya.
 # passwd -u harry           -  Unlock a user account.
 # su - jane                 -  Switch user on same terminal with home directory.
 # chfn harry                -  Add finger (Personal) info.
-# finger harry              -  View finger info.
+# finger harry              -  View finger info. [https://www.geeksforgeeks.org/finger-command-in-linux-with-examples/]
 # userdel harry             -  Delete a user (without deleting home directory)
 # userdel -r harry          -  Delete a user recursively (with home directory)
 # getent passwd jane        -  Get info of a user account.
 # getent passwd             -  List all existing users.  
+```
+
+# Password Management
+
+## Password Aging policies.
+
+1. Default: Password are encrypted using SHA512 algorithm (non human readable)
+2. Default: Dictionary check / Palindrome check (single character)/ Systematic & simplistic check (abc@123)
+3. Default: There are also password complexity policies like inclusion of upper-case,lower-case,characters,digits,special characters and minimum password lenght.
+4. Configured by admin:
+     * Password aging policies are critical for user security.
+     * There are 4 main password aging policies
+     * Minimum age[0]: 3 [Days gap between two password change]
+     * Maximum age[9999]: 60 [Days after which password is expired]
+     * Warning age[7]: 5 [Days before password expiry, that user is warned]
+     * Password inactive[-1]: 2 [Days after password expiray, that account is disabled]
+```
+# chage jane    - To change aging policy of a user.
+# chage -l jane - To check aging policy of a user.
 ```
