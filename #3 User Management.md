@@ -100,3 +100,57 @@ sales <--(S)-- ganesh --(P)--> ganesh
   ## Advance user management
 
   user
+          | - Primary association
+  group
+  UID [for user]
+  GID [for group]
+  Home direcotry
+  Personal profile files
+      - Personal
+          * Present in the home directory
+          * File name is .bashrc
+          * Personal for every user
+      - Common
+          * A common profile file for all users.
+          * file name is /etc/profile
+          * Only root can modify this file.
+  User login
+      |
+      |-- .bashrc
+      |-- /etc/profile
+
+Minimum UID and GID value for local users and groups is 1000
+UID and GID 'O' is always assigned to root and its group
+1-999 is reserved for system users and groups
+Default maximum limit for UID and GID is 6000<-- Configration
+
+** Every user is given profile files. Profiles are scripts that are executed every time when a user will login. If there is any command that you want to autorun at user login. You can put it in the profile file.
+
+Default values that useradd command use while creating a user are stored in 2 files:
+    
+    /etc/default/useradd
+    home = /home
+    shell = /bin/bash
+    inactive = -1
+
+    /etc/login.defs
+    min uid 1000
+    max uid 6000
+    min gid 1000
+    min gid 6000
+    min age 0
+    max age 99999
+    warn age 7 
+
+Shell
+    - Interactive 
+          - sh
+          - bash
+          - zsh
+    - Non interactive
+          - /sbin/nologin
+          - /bin/false
+
+* By default useradd command refers default values for creating a user from /etc/login.defs and /etc/default/useradd file.
+* Admin can create a customzied user by mentioning the values in the command
+* Such command is called an extended useradd command.
