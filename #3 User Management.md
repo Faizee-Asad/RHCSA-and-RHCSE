@@ -62,5 +62,41 @@ A -> Accounting - kya kya kiya.
 
 * A group is a set of multiple users.
 * With every user, a default group is created.
-* The name of default group is create.
-* 
+* The name of default group is same as the name of user.
+* By default: Every user is associate with its own group.
+* root can create additonal groups
+* Just creating group is not enough. group and user must be associated.
+* A user can associate with multiple groups.
+
+sales <--(S)-- ganesh --(P)--> ganesh 
+              |
+              |
+              ^
+             mumbai
+
+    mahesh --(P) --> sales
+* A user is user, a group is a group
+* Their association is either primary or supplementary
+* A user can have multiple groups associated as supplementary. but their can be only one primary group for a user.
+
+  User                            groups
+  ganesh     -- (associated) -->  ganesh
+  manesh     -- (associated) -->  manesh
+                                  mumbai
+                                  delhi
+                                  hr
+                                  sales
+
+  ```
+  # groupadd sales -  To create a group
+  # groupdel sales -  To delete a group
+  # usermod -g sales ganes - To create primary association
+  # usermod -aG acounts ganesh - To create supplementary association
+  # id ganesh - Check group association of a user
+  # getent group sales - Check exitence of group
+  # gretent group
+  ```
+
+  ## Advance user management
+
+  user
