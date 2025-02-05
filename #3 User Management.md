@@ -154,3 +154,36 @@ Shell
 * By default useradd command refers default values for creating a user from /etc/login.defs and /etc/default/useradd file.
 * Admin can create a customzied user by mentioning the values in the command
 * Such command is called an extended useradd command.
+  ```
+  Command lifeline
+  # useradd --help
+  # ls --help
+  # man useradd
+  # man tar
+  ```
+Example 
+
+```
+Create a user 'harry' with UID as 6003
+# useradd -u 6003 harrt
+Create a user 'susan' with home directory is /usr/local
+# useradd -b /usr/local susan
+Create a user 'Donald' with a no login shell
+# useradd -s /sbin/nologin
+Lets understand this command
+# useradd -u 9993 -b /usr/local/bin -G hr nashta
+# chage -l ganesh
+  Last password : Jan 30,2025
+  Password expires : Mar 16, 2025
+  Password inactive : Mar 17, 2025
+  Account expires : Never
+  Minimum number of days  between password change: 3
+  Maximum number of dyas between password change: 45
+  Maximun number of days of warning before password expires: 5
+# chage ganesh
+# chage -l ganesh
+
+Command for Group:
+getent group  - check existence of groups  
+```
+
