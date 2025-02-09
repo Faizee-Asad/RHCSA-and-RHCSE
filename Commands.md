@@ -170,7 +170,49 @@ sudo apt install ncal
 # ls -lh # human readable
 ```
 
+### 2. Print name of current working directory
+```
+# pwd
+```
 
+### 3. Change directory
+```
+# cd
+# cd /
+```
+### 4. Create a directory
+```
+# mkdir /dir1
+# mkdir -p /linux/distros/redhat
+# mkdir /linux/distros/{ubuntu,fedora,centos}
+```
+### 5. Create a file
+```
+# touch /file.txt
+# touch /index.html
+# touch /linux/distors/redhat/{rhel7,rhel8,rhel9}
+```
+* In linux there is no extention concept.
+
+### 6. list contents of directory in a tree like format.
+```
+# tree /linux
+```
+
+### 7. To copy file or directory
+```
+# cp /file.txt /root/Music
+```
+### 8. To move file or direcotry
+```
+# mv /html /root/Desktop
+```
+### 9. To delete file or direcotry
+```
+# rm /file.txt
+# rm -f /root/Music/*.txt # forcefully remove
+# rm -rf /root/Music/html #  for directory
+```
 ## Absolute path: Complete path from current locations to reach a destination file or directory is called absolute path.
 * . current directory
 *  .. previous directory
@@ -179,7 +221,7 @@ sudo apt install ncal
 *  root: ~ = /root
 *  asad: ~ = /home/asad
 
-### Find a path of the file
+### . Find a path of the file
 ```
 # locate 
 ```
@@ -195,5 +237,5 @@ Examples
 # locate lol.txt
 # updatedb
 # locate lol.txt
-```
+``` 
 
