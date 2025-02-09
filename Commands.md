@@ -160,3 +160,40 @@ sudo apt install ncal
 ```
 # reboot
 ```
+
+# File Management
+
+### 1 List directory contents
+```
+# ls
+# ls -l # long listing formate
+# ls -lh # human readable
+```
+
+
+## Absolute path: Complete path from current locations to reach a destination file or directory is called absolute path.
+* . current directory
+*  .. previous directory
+*  /root/Desktop - stating slash is called linux directory. and after root slash is a seprators.
+*  ~ (tilda) -> Current user home directory
+*  root: ~ = /root
+*  asad: ~ = /home/asad
+
+### Find a path of the file
+```
+# locate 
+```
+* Depends o a local database file  /var/lib/mlocate/mlocate.db
+* updatedb commands is used locate's database immediatedly.
+```
+# updatedb
+```
+Examples
+```
+# locate sshd config
+# touch /lol.txt
+# locate lol.txt
+# updatedb
+# locate lol.txt
+```
+
