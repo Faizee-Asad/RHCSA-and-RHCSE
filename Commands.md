@@ -1,10 +1,12 @@
 # Basic Commands
 
-## 1. Clear the screen using "clear" command or by pressing "ctrl+l"
+## Managing the terminals
+
+### 1. Clear the screen using "clear" command or by pressing "ctrl+l"
 ```
 # clear
 ```
-## 2. Check the terminal you are working on by using "tty" command.
+### 2. Check the terminal you are working on by using "tty" command.
 ```
 # tty
 ```
@@ -28,3 +30,90 @@
 
 ** Local terminal are called tty tty1 to tty6
 ** Remote terminal, gnome terminal. Tmux terminal are called pts, pts/0, pts/1, pts/2 ... etc.
+
+### 3. Logout of the terminal by typing "exit" or by pressing "ctrl+d". "logout" command works only on the login terminals and not on the graphical terminals.
+```
+# logout
+# exit
+```
+
+## Managing the system name
+
+### 1. Display the system name using "hostname" command - Check current server name 
+```
+# hostname
+# hostnameclt
+```
+### 2. Check current login name
+```
+# whoami
+```
+### 3. Change hostname of a server
+```
+# hostnamectl set-hostname newname
+```
+
+## System date and Calender
+
+### 1. Display date 
+```
+# date
+```
+
+### 2. Change date
+```
+# date -s "2021-07-23 11:15:00"
+```
+### 4. Display Calender
+```
+# cal
+# cal -3
+# cal 2022
+# cal 08 2022
+```
+* For kali you need to install ncal tool.
+```
+sudo apt install ncal
+```
+
+## Using Calculator
+
+### Basic calculator application
+``
+# bc
+2+2
+6-2
+2*2
+16/4
+``
+* To exit this tool use : "ctrl+c" and then type "quit".
+* For kali you need to install bc tool.
+```
+# sudo apt install bc
+```
+
+### Perform calculations without going in "bc" application by using "expr" command
+
+```
+# expr 5 + 5
+# expr 10 - 5
+# expr 25 / 5
+# expr 55 \* 11
+```
+## Exploring system information
+
+### 1. Check detailed system information
+```
+# hostnamectl
+```
+### 2. Check system kernel information
+```
+uname # check systm kernel name 
+uname -r # check systm kernel version
+uname -m # check systm kernel architecture
+uname -a # check systm kernel all info.
+```
+### 3. Check OS version
+```
+cat /etc/os-release
+```
