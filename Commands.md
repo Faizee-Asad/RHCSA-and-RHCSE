@@ -75,13 +75,13 @@ sudo apt install ncal
 ## Using Calculator
 
 ### Basic calculator application
-``
+```
 # bc
 2+2
 6-2
 2*2
 16/4
-``
+```
 * To exit this tool use : "ctrl+c" and then type "quit".
 * For kali you need to install bc tool.
 ```
