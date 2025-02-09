@@ -28,8 +28,8 @@
 * Press and release ctrl + b and then press c to open a new tab in tmux.
 * Press and release ctrl + b and then type tab number to jump on a tab in tmux.
 
-** Local terminal are called tty tty1 to tty6
-** Remote terminal, gnome terminal. Tmux terminal are called pts, pts/0, pts/1, pts/2 ... etc.
+* Local terminal are called tty tty1 to tty6
+* Remote terminal, gnome terminal. Tmux terminal are called pts, pts/0, pts/1, pts/2 ... etc.
 
 ### 3. Logout of the terminal by typing "exit" or by pressing "ctrl+d". "logout" command works only on the login terminals and not on the graphical terminals.
 ```
@@ -44,11 +44,7 @@
 # hostname
 # hostnameclt
 ```
-### 2. Check current login name
-```
-# whoami
-```
-### 3. Change hostname of a server
+### 2. Change hostname of a server
 ```
 # hostnamectl set-hostname newname
 ```
@@ -108,12 +104,59 @@ sudo apt install ncal
 ```
 ### 2. Check system kernel information
 ```
-uname # check systm kernel name 
-uname -r # check systm kernel version
-uname -m # check systm kernel architecture
-uname -a # check systm kernel all info.
+# uname # check systm kernel name 
+# uname -r # check systm kernel version
+# uname -m # check systm kernel architecture
+# uname -a # check systm kernel all info.
 ```
 ### 3. Check OS version
 ```
-cat /etc/os-release
+# cat /etc/os-release
+```
+## Exploring User Login Information
+
+### 1. Check which user is currently logged in.
+```
+# whoami
+```
+### 2. Check which users are logged in.
+```
+# users
+```
+### 3. Check which users are logged in. This also gives information of the terminal they are currently logged in on and since when.
+```
+# who
+```
+### 4. Shows server's uptime
+```
+# uptime
+```
+### 5. Check which users are logged in on which terminal, since when and what they are doing using the 'w' command.
+```
+# w
+```
+### 6. Continously monitor the "w" command using "watch w"
+```
+# watch w
+```
+* Exit "watch w" by pressing "ctrl+c"
+
+## History of commands
+
+```
+# history
+# history 15
+# history -c
+```
+* history -c is not work in kali
+
+## Powering System On or Off
+
+### 1. Trun system off by using "poweroff"
+```
+# poweroff
+```
+### 2. Restart system by using "reboot"
+```
+# reboot
 ```
