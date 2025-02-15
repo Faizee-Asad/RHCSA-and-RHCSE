@@ -251,4 +251,33 @@ Examples
 * -exec: Execute a command on matching files.
 * -perm: Match permissions.
 * -user: Match owner.
-* 
+* -or: Find file matchning one condition OR another.
+* Syntax: find /target-dir -criteria value (find file that match the criteria)
+*         find /target-dir ! -criteria value (find files that do not match the criteria)
+
+```
+# find /etc -name "*.conf"
+# find /etc -name "a*.conf"
+# find /etc -name "[ad]*.conf"
+# find /etc -name "[a-d]*.conf"
+# find /etc -name "[a-c]*"
+# find /etc -iname "[a-c]*"
+# find /usr/bin -size +4M
+# find /usr/bin -size +4M -size -30M
+# find /simpledir -type f
+# find /simpledir -type d 
+# find /usr/bin -size +4M -exeec cp {} /root/Music \;
+# find /root/Music -name "*" -type f -exec ls -lh {} \;
+```
+
+### Commads to read text files:
+1. cat: simple text reading command. It print the whole file
+```
+# cat /etc/default/useradd
+```
+2. less: print the file page wise.
+```
+# less /var/log/messaages (use up/down arrow key to scroll and press 'q' to exit.)
+```
+3. head: print top lines of a file.
+4. tail 
