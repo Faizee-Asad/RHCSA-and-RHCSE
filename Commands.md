@@ -280,4 +280,16 @@ Examples
 # less /var/log/messaages (use up/down arrow key to scroll and press 'q' to exit.)
 ```
 3. head: print top lines of a file.
-4. tail 
+```
+# head -5 /var/log/messaages (print the first 5 line) 
+```
+4. tail: print last lines of a file. 
+```
+# tail -5 /var/log/messaages (print the last 5 line)
+```
+5. grep: print lines that contain a particular word/phrase.
+```
+# cat /etc/password (print the whole file)
+# grep "spool" /etc/passwd (print only those line that contain word "spool")
+```
+6. cut: print columns from data
