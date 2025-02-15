@@ -292,4 +292,50 @@ Examples
 # cat /etc/password (print the whole file)
 # grep "spool" /etc/passwd (print only those line that contain word "spool")
 ```
-6. cut: print columns from data
+6. cut: print columns from a database file.
+```
+cut -f 3 -d : /etc/passwd (-d means delimiter/seprator and -f means field number)
+```
+7. | : pipeline 2 or more commands to work as a team and derive the output.
+```
+# grep "spool" /etc/passwd | cut -f 3,6 -d :
+# date | cut -f 4,5 -d :
+```
+### Text editor: vi (vim) and nano
+
+* Nano: easy to use; control short-curs are displayed on the screen;
+* not so effective and fast; prefered by new comers.
+```
+# nano filenmae
+```
+* Vi (vim): Most powerful text editor; fastest text editor;
+* tutorials require to use vi; most used editor on linux
+```
+# vi filename
+```
+* Mode
+* |--execute (perform operations) * default mode (typing not allowed)
+* |--insert (typing)
+
+* Options
+*  i                    -->  enter into insert mode
+*  esc                  -->  enter into execution mode
+*  esc:w                -->  write changes
+*  esc:w /apple.txt     -->  write changes with file name
+*  esc:wq               -->  write changes and quit the file
+*  esc:wq /apple.txt    -->  write changes with file name
+*  esc:q                -->  quit the file
+*  esc:q!               -->  quit without saving changes
+*  yy                   -->  to copy current line
+*  p                    -->  to paste copied line below current line
+*  10yy                 -->  copy 10 lines
+*  dd                   -->  delete current lines
+*  10dd                 -->  delete 10 lines
+*  o                    -->  open a new line below current line
+*  shfit + o            -->  open a new line above current line
+*  u                    -->  undo changes
+*  esc:81               -->  go to line 81
+*  esc:$                -->  see line numbers
+*  esc:set nu           -->  set line numbers
+*  esc:set nonu         -->  hide line numbers
+*  esc:/word            -->  jump to the number containing word/phrase
