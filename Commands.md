@@ -339,3 +339,102 @@ cut -f 3 -d : /etc/passwd (-d means delimiter/seprator and -f means field number
 *  esc:set nu           -->  set line numbers
 *  esc:set nonu         -->  hide line numbers
 *  esc:/word            -->  jump to the number containing word/phrase
+
+### diff commnad
+* The diff command in Unix/Linux is used to compare two file line  by line display the differences between them.
+* It provide insight into what has changes, been added, or been remove in text files.
+```
+# diff file1.txt file2.txt (compare two file)
+# diff -y file1.txt file2.txt (show differences side-by-side)
+# diff --suppress-common-lines -y file1.txt file2.txt (suppress common lines)
+# diff -q file1.txt file2.txt  (output only whether files differ)
+```
+
+### 'patch' command
+* The patch command reads a patch file (output of diff -u ) and  applies the differences to the original file(s), updating them as specified.
+```
+# diff -u original_file modified_file > changes.patch (using diff, create a unified diff file)
+# patch original_file < changes.patch (to apply the patch to the original file)
+# patch -R original_file < changes.patch (to undo a patch that was applied)
+```
+
+### sed commond
+* sed --> Print the modified version of a file
+* sed -i --> save modification in the file
+
+```
+# cat linux.txt
+# sed s/unix/linux/ /linux.txt
+# sed s/unix/linux/2 /linux.txt
+# sed s/unix/linux/g /linux.txt
+# cat linux.txt
+# sed '3a This is a new line' /linux.txt
+# sed '3i This is a new line' /linux.txt
+# cat linux.txt
+# sed -i 's/unix/linux/g;3d;$a This is new line' linux.txt
+# cat linux.txt
+```
+
+### awk file programming
+* The awk command is a powerful text processing tool commonly used in Unix/Linux environment for pattern scanning and processing.
+* It processes text line-by-line and applies operations baesd on patterns and actions defined by the user.
+* The default delimiter for awk is a space
+```
+# awk '{print}' filename (to print entire file)
+# awk '{print $2}' filename {to print specific field like cut command}
+# awk '/pattern/{print}' filename {to print lines containing pattern word.}
+# awk '$3>50{print}' filename (to print lines with conditions. print lines whether value in the third column is greater than 50)
+# awk -f "," '{print $1,$2}' filename (To specify a delimiter)
+# awk '{print NR,$0}' filename (To print file with line number)
+```
+## Archiving and compression
+
+* Backup data is generally in-frequently accessed. 
+* To save storage spcace on server, the best practice is to keep backup data in comparessed form.
+* In all linux flavous, there are multiple compression tools that can work with tR archive manager to compress the archived data.
+
+* Various comparession tools are:
+* gzip -> fast performance speed, average compression ratio.
+* bzip2 -> bit slow performance speed, better compression ratio.
+* xzip -> very slow performance speed, best compression ratio.
+
+* Combination can be either tar & gzip or tar & bzip2 or tar & xzip
+* Eg:
+* tar cf /data.tar /usr/bin - tar cf /data.tar /usr/bin
+* gzip /data.tar - bzip2 /data.tar
+* gunzip /data.tar.gz - bunzip2 /data.bz2
+
+```
+## Compression using tar and gzip
+# du -h /usr/sbin (to know directory size)
+# tar zcf /bin.tar.gz /usr/sbin (to create an archive) 
+# ls -lh /bin.tar.gz (to know the size of compressed archive)
+# tar ztvf /bin.tar.gz (to list contents of an archive)
+# tar zxf /bin.tar.gz (to extract full content)
+# tar zxf /bin.tar.gz usr/sbin/nvme usr/sbin/ledmon (to extract some content)
+# tar zxf /bin.tar.gz -C /home (to extract in different directory)
+
+## Compression using tar and bzip2
+# tar jcf /bin.tar.bz2 /usr/sbin (to create an archive)
+# tar jtvf /bin.tar.bz2  (to list contents of an archive)
+# tar jxf /bin.tar.bz2  (to extract content)
+
+## Compression using tar and xzip
+# tar Jcf /bin.tar.xz /usr/bin (To create an atchive)
+# tar Jtvf /bin.tar.xz (to list contents of an archive)
+# tar Jxf /bin.tar.xz  (to extract content)
+```
+
+# Users Management
+
+## Server access type
+* OS access: performed by admins and developers for administration and development.
+* Application access: performed by end users for accessing applications.
+* User Type:
+* local user: end user with limited privileges.
+* super user: admin user with full privileges [root].
+* system user: inbuilt user used by the OS and application internally [we can not login with this users]
+* AAA Process:
+* A -> Authentication  -> kon hai
+* A -> Authorization   -> kya yeh kar sakte hai
+* A -> Accounting      -> kya kya kiya
