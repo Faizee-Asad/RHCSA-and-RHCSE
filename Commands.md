@@ -238,4 +238,17 @@ Examples
 # updatedb
 # locate lol.txt
 ``` 
-
+### The Find Command
+* It is a powerful utility used to search for files and directories within a directory hierachy.
+* It support various criteria, such as name, type, size, permissions, modification and more.
+* Key Flag:
+* -name: Match file name
+* -iname: Match case in-sensitive file name.
+* -type: Specify file type ( f for files, d for directories)
+* -size: Match file size
+* -mtime: Match modification time.
+* -atime: Match access time.
+* -exec: Execute a command on matching files.
+* -perm: Match permissions.
+* -user: Match owner.
+* 
