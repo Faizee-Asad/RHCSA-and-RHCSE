@@ -508,3 +508,32 @@ e.g command option value &> location
 * Password Aging Policies
 
 * Default : Passowrd are encrypted using SHA512 algorithm [Non Human Readable]
+* Default : (single character) abc@123 : Dictionary check/ Palindrome check / systematic & simplistic check.
+* Default : There are also password complexity policies like inclusion of upper case; lower case characters; digit; special character; minimum password length.
+* Configured by admin:
+* Password aging policies are critical for user security.
+* there are 4 main password aging policies:
+* Minimum age [0]: 3 (days gap between password change)
+* Maximum age [99999]: 60 (days after which password is expired)
+* Warning age [7]: 5 (days before password expiry; that user is warned)
+* Password inactive [-1]: 2 (days after password expiry; that account is disabled)
+
+```
+To change aging policy of a user
+# chage jane
+To check aging policy of a user
+# chage -l jane
+```
+## Groups Management
+
+* A group is a set of multiple users.
+* With every user a default group is created.
+```
+User      Assocaited
+-----------------------------
+Ganesh    ganesh
+Mahesh    mahesh
+          mumbai
+          hr
+          sales
+```
