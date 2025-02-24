@@ -528,6 +528,9 @@ To check aging policy of a user
 
 * A group is a set of multiple users.
 * With every user a default group is created.
+* The name of default group is same as the name of user.
+* By default every user is associated with its own group.
+* Root can create additional groups. 
 ```
 User      Assocaited
 -----------------------------
@@ -536,4 +539,25 @@ Mahesh    mahesh
           mumbai
           hr
           sales
+```
+* But Creating group is not enough group and user must be associated.
+* A user can associate with multiple groups.
+```
+Sale <--S-- ganesh --P--> ganesh
+              |
+              S
+              |
+           Mumbai           
+```
+* A user is user, a group is group
+* Their association is either **Primary** or **Supplementory**
+* A user can have multiple groups associated as supplementory but their can be only 1 primary group for a user.
+
+```
+# groupadd sales (to Create a group)
+# usermod -g sales ganesh (to create primary association)
+# id ganesh (check group assocation of a user)
+# groupdel sales (to delete a group)
+# getent group sales (check existeance of group)
+# getent group (list all existing groups.)
 ```
