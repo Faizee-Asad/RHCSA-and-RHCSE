@@ -301,6 +301,52 @@ cut -f 3 -d : /etc/passwd (-d means delimiter/seprator and -f means field number
 # grep "spool" /etc/passwd | cut -f 3,6 -d :
 # date | cut -f 4,5 -d :
 ```
+### Output Redirection
+
+* By default output of a command is derived on the terminal from where the command is executed. but we can redirect the output at some other location. It is called output redirection.
+* Locations:
+* on another terminal [Team Collaboration]
+* in a file [Create history/ report file]
+* to /dev/null [discard the output lines]
+```
+# > sign is used to redirect the output
+e.g command option value > location
+```
+### Error redirection
+
+* By default error of a command is derived on the terminal from where the command is executed. but we can redirect the error at some other location. It is called output redirection.
+* Locations:
+* on another terminal [Team Collaboration]
+* in a file [Create history/ report file]
+* to /dev/null [discard the error lines]
+```
+# 2> sign is used to redirect the error.
+e.g command option value 2> location
+# &> sign is used to redict both output as well as error.
+e.g command option value &> location
+```
+* In case of  redirection n a file
+* > sign will either create a new file or overwrite the existing file.
+* >> sign will either create a new file or append data in the existing file.
+
+```
+# tty
+# date
+# date /dev/pts/1
+# date > /output.txt
+# who > /dev/null
+# DATE
+# DATE 2> /dev/pts/1
+# DATE 2> /error.txt
+# cat error.txt
+# WHO 2> /dev/null
+# uname -r &> /dev/pts/1
+# unAme -r &> /dev/pts/1
+# who >> /output.txt
+# cat /output.txt
+# WHO 2>> /error.txt
+# cat /error.txt
+```
 ### Text editor: vi (vim) and nano
 
 * Nano: easy to use; control short-curs are displayed on the screen;
@@ -438,3 +484,27 @@ cut -f 3 -d : /etc/passwd (-d means delimiter/seprator and -f means field number
 * A -> Authentication  -> kon hai
 * A -> Authorization   -> kya yeh kar sakte hai
 * A -> Accounting      -> kya kya kiya
+
+### Command for Basic user management
+
+```
+# useradd jane (add a user account)
+# usermod -l jake jane (change a username)
+# passwd jane  (set/change password for a user)
+# passwd -d jane (remove password for a user)
+# passwd -l harry (Lock a user account)
+# passwd -u harry (Unlock a user account)
+# su - jane (switch user on same terminal with home dirctory)
+# chfn harry (Add finger [Personal] info)
+# finger harry (view finger info)
+# userdel harry (Delete a user [without deleting home direcotry])
+# userdel harry (Delete a user recursively [with Home directory])
+# getent passwd jane (get info. of a user account)
+# getent passwd (list all existing users.)
+```
+
+## Password management
+
+* Password Aging Policies
+
+* Default : Passowrd are encrypted using SHA512 algorithm [Non Human Readable]
