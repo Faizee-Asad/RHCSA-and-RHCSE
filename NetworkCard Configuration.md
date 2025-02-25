@@ -127,3 +127,73 @@ press q to exit
 # ping 10.0.0.112 -c 3
 # ping 10::111 -c 3 
 ```
+
+___________________________________________________________________________________________________________________________________________________________________________
+
+server 1(HOST OS): GUI Server 2,3,4(GUEST OS): CLI
+
+![{5F6F98FC-4293-4A19-AA08-FE421BC3993C}](https://github.com/user-attachments/assets/eea228b3-5c63-4450-86d7-c15004aa651d)
+
+
+server 2:
+dmesg|grep eth
+sed -i '/CMDLINE/  s/"\(.*\)"/"\1 net.ifnames=0 biosdevname=0"/'  /etc/default/grub
+grub2-mkconfig -o /boot/grub2/grub.cfg
+reboot
+dmesg|grep eth    (no output)
+systemctl status NetworkManager
+nmcli con show
+nmcli con delete "connection_name"
+nmcli con add con-name eth0 ifname eth0 type ethernet save yes
+nmcli con show
+nmcli con mod eth0 ipv4.addresses 10.0.0.111/24 ipv4.method manual ipv6.addresses 10::111/64 ipv6.method manual
+nmcli con reload
+nmcli con down eth0
+nmcli con up eth0
+ip a s
+===========================================================================================
+server 3:
+dmesg|grep eth
+sed -i '/CMDLINE/  s/"\(.*\)"/"\1 net.ifnames=0 biosdevname=0"/'  /etc/default/grub
+grub2-mkconfig -o /boot/grub2/grub.cfg
+reboot
+dmesg|grep eth    (no output)
+systemctl status NetworkManager
+nmcli con show
+nmcli con delete "connection_name"
+nmcli con add con-name eth0 ifname eth0 type ethernet save yes
+nmcli con show
+nmcli con mod eth0 ipv4.addresses 10.0.0.112/24 ipv4.method manual ipv6.addresses 10::112/64 ipv6.method manual
+nmcli con reload
+nmcli con down eth0
+nmcli con up eth0
+ip a s
+ping 10.0.0.111 -c 4
+ping 10::111 -c 3
+
+===========================================================================================
+server 4:
+dmesg|grep eth
+sed -i '/CMDLINE/  s/"\(.*\)"/"\1 net.ifnames=0 biosdevname=0"/'  /etc/default/grub
+grub2-mkconfig -o /boot/grub2/grub.cfg
+reboot
+dmesg|grep eth    (no output)
+systemctl status NetworkManager
+nmcli con show
+nmcli con delete "connection_name"
+nmcli con show
+nmcli con delete "connection_name"
+nmcli con add con-name bond0 ifname bond0 type bond save yes
+nmcli con add con-name eth0 ifname eth0 type bond-slave master bond0 save yes
+nmcli con add con-name eth1 ifname eth1 type bond-slave master bond0 save yes
+nmcli con show
+
+nmcli con show
+nmcli con mod bond0 ipv4.addresses 10.0.0.50/24 ipv4.method manual ipv6.addresses 10::50/64 ipv6.method manual
+nmcli con reload
+nmcli con down bond0
+nmcli con up bond0
+ip a s
+ping 10.0.0.111 -c 4
+ping 10::111 -c 3
+
