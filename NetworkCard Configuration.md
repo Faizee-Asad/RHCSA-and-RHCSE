@@ -130,11 +130,11 @@ press q to exit
 
 ___________________________________________________________________________________________________________________________________________________________________________
 
-server 1(HOST OS): GUI Server 2,3,4(GUEST OS): CLI
+ $ server 1(HOST OS): GUI Server 2,3,4(GUEST OS): CLI
 
 ![{5F6F98FC-4293-4A19-AA08-FE421BC3993C}](https://github.com/user-attachments/assets/eea228b3-5c63-4450-86d7-c15004aa651d)
 
-
+```
 server 2:
 dmesg|grep eth
 sed -i '/CMDLINE/  s/"\(.*\)"/"\1 net.ifnames=0 biosdevname=0"/'  /etc/default/grub
@@ -196,4 +196,4 @@ nmcli con up bond0
 ip a s
 ping 10.0.0.111 -c 4
 ping 10::111 -c 3
-
+```
