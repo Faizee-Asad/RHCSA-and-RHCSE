@@ -130,11 +130,13 @@ press q to exit
 
 ___________________________________________________________________________________________________________________________________________________________________________
 
- $ server 1(HOST OS): GUI Server 2,3,4(GUEST OS): CLI
-
 ![{5F6F98FC-4293-4A19-AA08-FE421BC3993C}](https://github.com/user-attachments/assets/eea228b3-5c63-4450-86d7-c15004aa651d)
+![Uploading WhatsApp Image 2025-02-25 at 14.55.48_cabb3830.jpg…]()
+
 
 ```
+server 1(HOST OS): GUI Server 2,3,4(GUEST OS): CLI
+
 server 2:
 dmesg|grep eth
 sed -i '/CMDLINE/  s/"\(.*\)"/"\1 net.ifnames=0 biosdevname=0"/'  /etc/default/grub
