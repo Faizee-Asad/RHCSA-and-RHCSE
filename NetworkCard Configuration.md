@@ -68,3 +68,62 @@ Step 7: Check the IP
 ```
 # ip a s
 ```
+
+# Task 3: Configuure Link Aggregation with 'nmcli' utility
+* Link Aggregation means grouping multiple network cards on server to form a logincal netwrok card. it is mainly used to increase the troughput of server's network connection.
+
+* Step 1: Check Network Manager Service Active and Enable
+```
+# systemctl status NetwrokManager
+press q to exit
+```
+* Step 2: list all connections in nmcli
+```
+# nmcli con show
+```
+* Step 3: Delete a network connection from nmcli
+```
+# nmcli con del "Wired connection 1"
+# nmcli con del "Wired connection 2"
+# nmcli con del "enp1s0"
+# nmcli con show
+```
+* Step 4: Create a new "bond" interface
+```
+# nmcli con add con-name bond0 ifname bond0 type bond save yes
+# nmcli con show
+
+```
+* Step 5: Add 'eth0' and 'eth1' netwrok connection in nmcli as slaves of 'bond0'
+```
+# nmcli con add con-name eth0 ifname eth0 type bond-slave master bond0 save yes
+# nmcli con add con-name eth1 ifname eth1 type bond-slave master bond0 save yes
+# nmcli con show
+
+```
+*  Step 6: Configure IPv4 and IPv6  address  (Dual stock) on bond network connection
+```
+# nmcli con mod bond0 ipv4.addresses 10.0.0.50/24 ipv4.method manual ipv6.addresses 10::50/64 ipv6.method manual
+```
+*  Step 7: Restart NetworkManager serivce and  apply new changes
+```
+# nmcli con reload
+# nmcli con down bond0
+# nmcli con down eth0
+# nmcli con down eth1
+# nmcli con up bond0
+# nmcli con up eth0
+# nmcli con up eth1
+```
+* Step 8: Check the IP
+```
+# ip a s
+```
+* Step 9: Test connectivity with other  machince in the netwrok
+```
+# ping -c 3 10.0.0.50
+# ping 10::50 -c 3
+# ping 10.0.0.111 -c 3
+# ping 10.0.0.112 -c 3
+# ping 10::111 -c 3 
+```
