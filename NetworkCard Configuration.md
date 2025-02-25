@@ -131,7 +131,7 @@ press q to exit
 ___________________________________________________________________________________________________________________________________________________________________________
 
 ![{5F6F98FC-4293-4A19-AA08-FE421BC3993C}](https://github.com/user-attachments/assets/eea228b3-5c63-4450-86d7-c15004aa651d)
-![Uploading WhatsApp Image 2025-02-25 at 14.55.48_cabb3830.jpg…]()
+![WhatsApp Image 2025-02-25 at 14 55 48_cabb3830](https://github.com/user-attachments/assets/5e75205e-3015-4143-ae72-4a842512cdf9)
 
 
 ```
