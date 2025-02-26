@@ -1,7 +1,7 @@
 # LAB 1 - Installation of RHEL8 & RHEL9
 
 ## Task: Install RHEL8
-
+```
 The below steps to install RHEL 9 can be used for both virtual and bare-metal deployment.
 
 Steps
@@ -79,5 +79,5 @@ Hard Drive (60GB)
 12: Begin Install
 13: Reboot
 
-
+```
 
