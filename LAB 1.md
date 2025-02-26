@@ -35,9 +35,10 @@ Time/Date: Asia/Kolkata
 24. Set your "Root Password" than click on "Done".
 25. To create a local user click on "User Creatation". Define Full Name and User name as "rst" and set the password as "Rst@123". Now click on Done.
 26. Once you installtion is complete it will provided you to reboot the system. Click on "Reboot".
-
+```
 ## Task: Install RHEL9
 
+```
 # VMWare:
 
 1. Firstly create a directory on base system (I have created: RHCSA-and-RHCSE)
@@ -66,12 +67,14 @@ Edit virtual machine -> Adjust ram allocation (4GB Ram 4 Core) -> CD/DVD: Browse
 7. Time/Date: Asia/Kolkata
 8. Installation Destination: Custom, Done, Type: Standard, Click On +, Mountpoint: (Note: 1gib = 1GB)
 ```
+```
 Hard Drive (60GB)
     |___ /boot (1GB)
     |___ /var (10GB)
     |___ / (40GB)
     |___ /home (4GB)
     |___ swap (4GB)
+```
 ```
 9. Hostname: server1
 10. Root password: redhat
