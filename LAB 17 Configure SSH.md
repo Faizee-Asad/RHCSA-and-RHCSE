@@ -69,3 +69,111 @@ Ketpair
   |----- private key (id_rsa_file)
   |----- public key (id_rsa.pub file)
 ```
+# Task 1: Configure SSH on server
+
+* Step 1: Check whether openssh is installed
+```
+# dnf list openssh
+```
+* Step 2: Check whether openssh is running (if not enable it.):
+```
+# systemctl enable --now sshd
+# systemctl status sshd
+# ps -el|grep sshd
+# ss -tnlp			(check the sockets for port 22 and their PID numbers)
+```
+# Task 2: On client side (Linux)
+
+* Step 1: Check whether openssh is installed
+```
+# dnf list openssh
+```
+* Step 2: Connect to server remotely.
+```
+# ssh root@10.0.0.50	   #10.0.0.50 can be replaced with destination server address and root can be replaced with any remote user
+# yes
+## provide password of the user
+# exit
+```
+* Step 3 : To run a command on remote server rather than taking a persistent SSH session
+```
+# ssh root@10.0.0.50  'touch /usr/local/123.txt' 		to run a command on remote server rather than taking a persistent SSH session
+# ssh root@10.0.0.50  'ls /usr/local'
+```
+
+* Step 4: To copy and paste client to server and server to client
+```
+touch aaa.txt
+	scp aaa.txt   root@10.0.0.111:/root				to copy a file from client to server
+	scp root@10.0.0.111:/root/aaa.txt   /usr			to copy a file from server to client
+```
+# Task 3: Keypair Authentication
+
+* Step 1 : On Linux client: (10.0.0.100) generate a keypair
+```
+# ssh-keygen											to generate a keypair on client
+enter > enter > enter
+```
+* Step 2: Locate the keys
+```
+# ls .ssh
+# cat .ssh/id_rsa										check private key
+# cat .ssh/id_rsa.pub									check public key
+```
+* Step 3: transfer public key on server
+```
+# ssh-copy-id root@10.0.0.111							to transfer public key on server
+# ssh-copy-id root@10.0.0.112							to transfer public key on server	
+# ssh-copy-id root@10.0.0.50							to transfer public key on server
+# ssh root@10.0.0.111									keypair based login
+```
+* Step 4: Enforce keypair authentication only
+```
+On server side (10.0.0.111, 10.0.0.112, 10.0.0.50): to enforce keypair authentication only
+	vi /etc/ssh/sshd_config
+			uncomment and change PASSWORD_AUTHENTICATION=yes to PASSWORD_AUTHENTICATION=no
+	systemctl restart sshd
+```
+
+_______________________________________________________________________________________________________________________
+```
+SSH:
+On server: (10.0.0.111, 10.0.0.112, 10.0.0.50)
+	dnf list openssh
+	systemctl enable --now sshd
+	systemctl status sshd
+	ps -el|grep sshd
+	ss -tnlp			(check the sockets for port 22 and their PID numbers)
+
+On client side (Linux): (10.0.0.100)
+	dnf list openssh 
+	ssh root@10.0.0.50	   #10.0.0.50 can be replaced with destination server address and root can be replaced with any remote user
+	yes
+	provide password of the user
+	exit
+
+	ssh root@10.0.0.50  'touch /usr/local/123.txt' 		to run a command on remote server rather than taking a persistent SSH session
+	ssh root@10.0.0.50  'ls /usr/local'
+	touch aaa.txt
+	scp aaa.txt   root@10.0.0.111:/root				to copy a file from client to server
+	scp root@10.0.0.111:/root/aaa.txt   /usr			to copy a file from server to client
+
+
+
+Keypair Authentication:
+On Linux client: (10.0.0.100)
+	ssh-keygen											to generate a keypair on client 
+		enter > enter > enter
+	ls .ssh
+	cat .ssh/id_rsa										check private key
+	cat .ssh/id_rsa.pub									check public key
+	ssh-copy-id root@10.0.0.111							to transfer public key on server
+	ssh-copy-id root@10.0.0.112							to transfer public key on server	
+	ssh-copy-id root@10.0.0.50							to transfer public key on server
+	ssh root@10.0.0.111									keypair based login
+
+On server side (10.0.0.111, 10.0.0.112, 10.0.0.50): to enforce keypair authentication only
+	vi /etc/ssh/sshd_config
+			uncomment and change PASSWORD_AUTHENTICATION=yes to PASSWORD_AUTHENTICATION=no
+	systemctl restart sshd
+```
