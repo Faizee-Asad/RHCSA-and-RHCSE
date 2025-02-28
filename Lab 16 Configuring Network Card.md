@@ -30,6 +30,68 @@ A      1-126    /8      255.0.0.0       16,777,216 addresses per netwrok
 B      128-191  /16     255.255.0.0     65,536 addresses per netwrok
 C      192-223  /24     255.255.255.0   256 addresses per netwrok
 ```
+```
+10.0.0.0/8
+10.10.0.0/16
+10.10.10.0/24
+```
+* **IANA** also divided IPv4 addresses into 2 types: **Private IP** and **Public IP**.
+* Private IP addresses can be used within a private network.
+* Private IP cannot travel on public network like internet.
+* For communication on internet, only Public IP must be used.
+
+* All IP addresses of class A,B and C are public. But IANA has reserved a range of addresses in each class as private.
+* Private IP addresses ranges are:
+```
+10.0.0.0 - 10.255.255.255
+172.16.0.0 - 172.31.255.255
+192.168.0.0 - 192.168.255.255
+```
+* 127.0.0.0/8 is reserved for loop back purpose.
+* Every computer has a default logical network interface called **loopback** interface with IP address _**127.0.0.1**_.
+
+* IPv6 addresses are 128-bit long hexa-decimal address with a default fixed mask 64 bits.
+* e.g 3ffe:0c1a:0000:73b9:2201:af1b:6c00:093b/64
+```
+0000 --> ffff
+no private and public separate range
+IPv4 + IPv6 = Dual Stock
+10::1/64
+10::2/64
+``` 
+* Device can communicate directly only if their IP address belong to same network.
+* For devices that are in different network to communicate with each other , We need a **Router**.
+* Router routes between 2 or more networks.
+* Router can also connect a private network with internet..
+* Router's IP address is called default gateway address in the OS.
+* To secure access of a network or resources in a network from hackera and unauthorized access we need to deploy a **Firewall**.
+* Firewall filters the incoming and outgoing traffic of a network using various factors like Source/destination address, protocol (tcp,udp,icmp) and service port number.
+
+```
+Manual --> admin assigned (fixed)
+Auto --> DHCP assigned (random)
+
+eth0 (mac address)
+  |__ IP address/ Mask
+  |__ Gateway address
+
+```
+
+# Link Aggregation
+* Ehternet cards with fixed  bandwidth (10mbps, 100mbps, 1gbps, 10gbps, 100gbps).
+* If bandwidth of a single network card on a server is insufficient to handle network payload, then we can add more network cards on the server and logically group them to increase throughput.
+* This machanism is called link aggregation.
+* In link aggregation, a logical network interface called bond interface is created.
+* Bond interface becomes the **master** and the physical cards (eth0, eth1) become **slave of bond**.
+* IP address is configure on bond anf not on physical cards.
+* MAC address still stays on physical cards.
+* All the network traffic will be load balanced between slave cards by bond interface, thus provide **High throughput**.
+* Also, if one of the network cards fails, bond continues the communication with rest network cards in the group, thus providing **redundancy (failover) of network cards**.
+* LACP protocol is used.
+* A single bond interface can have up to 16 network cards. 
+
+![Screenshot_20250225-112117 1](https://github.com/user-attachments/assets/77030bdc-dea8-46bd-ab28-6b348fcbff54)
+
 
 
 # Task 1: Force Linux to use kernel assigned drivers for netwrok cards:
