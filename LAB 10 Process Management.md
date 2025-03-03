@@ -66,3 +66,49 @@ Sleep processe are futher divided into 2 types:
 ```
 top command is used in all Linux flavors to perform live monitoring of top running processes
 ```
+
+```
+# pidof crond (pidof command is used to find out the process IDs of a specific running program)
+# pidof crond atd bash
+
+# echo $$ ($$ is the PID of the current process.)
+
+# sleep 10 (sleep command is used to create a dummy job.)
+# jobs (jobs command in Linux lists jobs that are running, stopped, or otherwise in the current shell environment)
+
+# sleep 10000 & (Run this command in background. & is used to run command in the background. by default command run in foreground.)
+# sleep 20000 &
+# jobs (check list of background process)
+
+# fg %2 (The fg command brings a background process to the foreground) (Ctrl + Z to stop the proocess)
+# jobs
+# bg %2 (The bg command moves a stopped process from the foreground to the background ) 
+# jobs
+```
+```
+# ps displays information about a selection of the active processes
+# ps aux|less
+# ps lax|less
+# ps -el|less
+# ps -eo comm,pid,ppid
+
+# top (top command is used to show the Linux processes)
+```
+```
+# ps -el | awk '/D/ {print $2}'
+# ps -el | grep "D"
+
+# ps -el | grep atd
+# kill -19 1647 (STOP (19) - used to stop / suspend a process)
+# ps -el | grep atd
+# killall -18 atd (CONT (18) - used to resume / start a suspended / stopped process)
+
+# ps -el | grep atd
+
+# su abc
+# bc
+
+# pkill bc -u abc
+# pkill -9 bc -u abc (KILL (9) - used to abruptly kill a process)
+# pkill -2 bc -u abc (INT (2) - used to kill a process when used does ctrl + c)
+```
