@@ -12,6 +12,7 @@ Run-level 4    unused
 Run-level 5    used to run a linux server with graphics
 Run-level 6    used to reboot server.
 ```
+[Introduction to Linux Runlevels](https://www.youtube.com/watch?v=LPu3IZwbOA8)
 
 * To know previous and current run-level
 ```
