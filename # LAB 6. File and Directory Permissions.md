@@ -25,3 +25,18 @@ Method:
   1. **r**ead
   2. **w**rite
   3. e**x**ecute
+
+* Valid sets of permission:
+```
+      rwx      -->      full access
+      r-x      -->      read and execute
+      --x      -->      execute only
+      ---      -->      full deny 
+```
+```
+abc(--x)
+     |__def(--x)
+             |__pqr(--x)
+                      |__xyz(rwx)
+```
+### It is mandatory to have execute permission on a directory along with read and write 
