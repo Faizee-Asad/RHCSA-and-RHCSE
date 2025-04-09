@@ -1,0 +1,14 @@
+# Install CentOS ans Ubuntu in Virtaul Box
+
+https://www.centos.org/download/ - Download Link
+https://ubuntu.com/download/desktop#system-requirements-NobleNumbat - Download Link
+Redhat - Already setup and install.
+
+# Accessing  Linux Server Remotely Using SSH - Putty | Windows CMD | Gitbash | MobaXtream
+
+1. Make sure you have setup network as on bridged.
+
+2. Open putty and fill centos ip and click Open. now insert username password. SUCCESS CONNECTED.
+3. Same as REDHAT LINUX.
+4. But in Ubuntu you need to install openssh-server and start the service.
+
