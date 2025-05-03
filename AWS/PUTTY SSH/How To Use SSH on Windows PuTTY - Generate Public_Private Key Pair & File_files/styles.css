@@ -1,0 +1,238 @@
+@keyframes popup {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    70% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes popup-fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#GenesysChatOffer {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 100000001;
+    opacity: 1;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 10px;
+    animation-name: popup;
+    animation-duration: 1s;
+}
+
+#GenesysChatOfferWeb {
+    position: fixed;
+    inset: 0;
+    z-index: 100000001;
+    opacity: 1;
+    transform: translateY(0px);
+    background-color: #00000091;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 10px;
+    animation-name: popup-fadein;
+    animation-duration: 500ms;
+}
+
+/* default */
+#genesys-mxg-frame {
+    display: none;
+}
+
+#nf-close-chat {
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 19px 12px;
+    font-size: 12px;
+    line-height: 12px;
+    color: rgba(0, 0, 0, 0.54);
+    z-index: 100000001;
+    margin: 0 auto;
+    cursor: pointer;
+    
+    &.hide, &.show	{
+        display: none;
+    }
+}
+
+#nf-chat-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    right: -300px;
+    bottom: 24px;
+    width: 56px;
+    height: 56px;
+    background: #007A33;
+    border: 2px solid #007A33;
+    box-shadow: 2.11213px 4.22427px 6.3364px rgba(0, 0, 0, 0.23);
+    border-radius: 64px 64px 0px 64px;
+    z-index: 100000001;
+    cursor: pointer;
+
+    & * {
+        pointer-events: none;
+    }
+    
+    &.hide {
+        opacity: 0;
+    }
+    
+    &.show {
+        opacity: 1;
+        transition: opacity 400ms;
+        right: 28px;
+        
+        /* Allow minimize button to be revealed */
+        &.chat-pop {
+            display:  none;
+        }
+    }
+    
+    &:hover {
+        background: #FFFFFF;
+        border: 2.11213px solid #007A33;
+
+        & svg, & .text	{
+            color: #007A33;
+        }
+    }
+    
+    & svg {
+        color: #FFFFFF;
+    }
+    
+    & .text {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 11px;
+        text-align: center;
+        letter-spacing: 0.75px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        white-space: nowrap;
+    }
+    
+    /* web overrides */
+    &.web {
+        background: #0D47FB;
+        border: 2px solid #0D47FB;
+        box-shadow: 0px 4.22427px 4.22427px rgba(0, 0, 0, 0.25), 4.22427px 4.22427px 0px #000000;
+
+        &:hover {
+            background: #FEC101;
+            border: 2px solid #FEC101;
+
+            & svg, & .text	{
+                color: #000000;
+            }
+        }
+    }
+
+    /* register overrides */
+    &.register {
+        background: #632E8F;
+        border: 2px solid #632E8F;
+
+        &:hover {
+            background: #FFFFFF;
+            border: 2px solid #632E8F;
+
+            & svg, & .text {
+                color: #632E8F;
+            }
+        }
+    }
+
+    /* bh overrides */
+    &.bluehost,
+    &.asmallorange,
+    &.site5,
+    &.arvixe {
+        background: #196BDE;
+        border: 2px solid #196BDE;
+
+        &:hover {
+            background: #0A476D;
+            border: 2px solid #0A476D;
+
+            & svg, & .text {
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    /* hostgator overrides */
+    &.hostgator {
+        background: #2E93EE;
+        border: 2px solid #2E93EE;
+
+        &:hover {
+            background: #FFFFFF;
+            border: 2px solid #2E93EE;
+
+            & svg, & .text	{
+                color: #2E93EE;
+            }
+        }
+    }
+
+    /* domain overrides */
+    &.domain {
+        background: #e24747;
+        border: 2px solid #e24747;
+
+        &:hover {
+            background: #FFFFFF;
+            border: 2px solid #e24747;
+            
+            & svg, & .text	{
+                color: #e24747;
+            }
+        }
+    }
+
+    /* ipage overrides */
+    &.ipage {
+        background: #e24747;
+        border: 2px solid #e24747;
+
+        &:hover {
+            background: #FFFFFF;
+            border: 2px solid #e24747;
+
+            & svg, & .text	{
+                color: #e24747;
+            }
+        }
+    }
+}
+
+/* print hide */
+@media print {
+    #nf-chat-button,
+    #genesys-mxg-frame {
+        display: none !important;
+    }
+}
