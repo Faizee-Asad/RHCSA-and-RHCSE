@@ -1,0 +1,22 @@
+For Windows
+
+1. Install Docker Desktop (& Login)
+
+2. Install nodejs (for runing react app) & Install VS Code (For writing the code)
+
+# Demo Project 
+
+after that open VS code and open terminal inside vs.
+> node -v
+> npx create-react-app testapp
+> cd testapp
+> npm start
+
+Delete the node_modules folder cuz it has depedencies the file size is so big and upload to github.
+clone and run
+> cd testapp
+> npm install
+> npm start
+
+# Creating Dockerfile
+ Lets make a docker image file 
