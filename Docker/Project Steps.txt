@@ -19,4 +19,58 @@ clone and run
 > npm start
 
 # Creating Dockerfile
- Lets make a docker image file 
+Let's make a docker image file 
+
+Create a file inside the testapp (Dockerfile)
+Install Docker Extention in VScode.
+
+Dockerfile Content
+
+```
+FROM node:22 
+# base image file get from hub.docker.com
+# Which application we need and which version we want.
+# make folder in the empty container
+WORKDIR /myapp
+# Copy our project file into containter
+COPY . .
+# install dependencies
+RUN npm install
+# Optional by defaults node app run 3000
+EXPOSE 3000 
+# RUN npm start
+CMD [ "nmp", "start" ]
+```
+
+# Now lets create docker image using Dockerfile
+
+# command to build dockerfile to image
+> docker build .
+
+# command to check list of image
+> docker image ls
+
+# Dockerfile is a simple text file with instructions to build an image.
+# Image: Single file with all the dep and lib to run the program.
+
+# run a image file in multiple container (isolated environment)
+
+# run docker image (file run successfully inside the container)
+> docker run IMAGEID
+
+# http://localhost:3000 it not working cuz you are not inside the container you are in windows environmnet we need to bind the port.
+
+# use in diff terminal with same path
+# stop the running
+> docker ps
+> docker stop NAMES
+
+# port binding
+> docker run -p 3000:3000 IMAGEID
+
+# running container in Detached mode (run container in background)
+> docker run -d -p 3000:3000 IMAGEID
+
+# runnig multple container from a single image.
+> docker run -d -p 3001:3000 IMAGEID
+> docker run -d -p 3002:3000 IMAGEID
