@@ -74,3 +74,12 @@ CMD [ "nmp", "start" ]
 # runnig multple container from a single image.
 > docker run -d -p 3001:3000 IMAGEID
 > docker run -d -p 3002:3000 IMAGEID
+
+# see all the container 
+> docker ps -a
+
+# remove container
+> docker rm NAMES
+
+# run and rm when we stop the container
+> docker run -d --rm -p 3002:3000 IMAGEID
