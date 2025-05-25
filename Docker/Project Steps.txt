@@ -105,3 +105,14 @@ just run dont change anything in dockerfile just update code and run this. creat
 > docker run -d --rm --name "myapp" -p 3002:3000 mywebapp:02
 
 _____________________________________________________________________________________________________________________
+
+# Predefined iamges
+
+Go to docker hub.
+
+> docker pull python
+> docker run python:latest 
+(run and exit) 
+
+> docker pull nginx
+> docker run -p 8080:80 nginx:latest  
