@@ -83,3 +83,25 @@ CMD [ "nmp", "start" ]
 
 # run and rm when we stop the container
 > docker run -d --rm -p 3002:3000 IMAGEID
+
+# Assign container name
+> docker run -d --rm --name "myapp" -p 3002:3000 IMAGEID
+
+
+# Image management
+
+> docker image ls
+> docker build .
+> docker build -t mywebapp:01 .
+> docker build -t mywebapp:02 .
+
+> docker rmi mywebapp:01
+> docker rmi IAMGEID
+
+# What if we update the project
+
+just run dont change anything in dockerfile just update code and run this. create image and run the container
+> docker build -t mywebapp:02 .
+> docker run -d --rm --name "myapp" -p 3002:3000 mywebapp:02
+
+_____________________________________________________________________________________________________________________
