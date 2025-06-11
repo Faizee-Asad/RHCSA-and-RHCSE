@@ -8,6 +8,8 @@
 
 This project demonstrates the complete setup and deployment of a PHP-based blog application using the LAMP stack (Linux, Apache, MySQL, PHP) on an Amazon EC2 instance running Amazon Linux 2023. It showcases my ability to configure cloud infrastructure, manage a Linux environment, install and configure software components, and troubleshoot real-time web server issues.
 
+
+
 # 🧱 Tech Stack
 
 | Component   | Technology        |
