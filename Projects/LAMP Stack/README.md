@@ -110,3 +110,7 @@ sudo chown -R apache:apache /var/www/html
 sudo chmod -R 755 /var/www/html
 sudo systemctl restart httpd
 ```
+
+# 🟢 8. Final Output
+
+![al-lamp-1](https://github.com/user-attachments/assets/efd75fa5-930c-4aec-9504-19064748bfca)
