@@ -26,3 +26,9 @@ Click on Enter Setup
 Click Configure Boot Ootions
 Click Enable or Disable boot option
 EFI Network <DISABLE>
+
+-------------------------------------------------
+
+How to install docker on ubuntu
+https://docs.docker.com/engine/install/ubuntu/
+
