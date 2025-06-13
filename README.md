@@ -32,3 +32,6 @@ EFI Network <DISABLE>
 How to install docker on ubuntu
 https://docs.docker.com/engine/install/ubuntu/
 
+How to install Jenkins on ubuntu
+https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
+
