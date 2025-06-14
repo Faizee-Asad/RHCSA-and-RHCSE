@@ -50,3 +50,15 @@ Navigate to Softaculous
 Browse or search for apps (e.g., WordPress, Laravel)
 Click Install and set options (domain, DB name, admin login)
 
+
+## ports
+
+| Port     | Panel/Service                           | Protocol  |
+| -------- | --------------------------------------- | --------- |
+| 2002     | Admin Panel                             | HTTP      |
+| 2003     | Enduser Panel                           | HTTP      |
+| **2004** | **Enduser Panel (Secure)**              | **HTTPS** |
+| 2005     | Webuzo Services (Optional internal use) | -         |
+| 2006     | Admin Panel (Secure)                    | HTTPS     |
+
+
