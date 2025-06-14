@@ -1,0 +1,68 @@
+🔐 SSL Deployment on EC2 (Amazon Linux + Apache + PHP)
+
+✅ Prerequisites:
+
+EC2 instance is running
+
+Your blog is accessible on HTTP (http://your-ip)
+
+You own a domain (e.g., yourdomain.com)
+
+Your domain is pointed to your EC2 public IP (via DNS A record)
+
+Example A record:
+
+Type: A
+Name: yourdomain.com
+Value: 13.201.33.185
+TTL: 300
+Once the domain is working with HTTP, proceed.
+
+🛠 Step 1: Install Certbot (for Amazon Linux 2023)
+
+sudo dnf install -y epel-release
+sudo dnf install -y certbot python3-certbot-apache mod_ssl
+
+🛠 Step 2: Request and Install SSL Certificate
+
+sudo certbot --apache
+
+You'll be asked:
+
+Enter your domain name: yourdomain.com
+
+Choose to redirect HTTP to HTTPS (recommended)
+
+Certbot will:
+
+Automatically configure Apache
+
+Add SSL certificates
+
+Reload the Apache service
+
+✅ Now visit:
+https://yourdomain.com
+
+🔁 Step 3: Auto-Renew SSL (Recommended)
+Let’s Encrypt certs expire every 90 days. Add this cron job to auto-renew:
+
+echo "0 2 * * * root /usr/bin/certbot renew --quiet" | sudo tee /etc/cron.d/certbot-renew
+
+🎉 Done! Your blog now runs on HTTPS.
+
+📌 Want to test SSL?
+Use:
+
+🔗 https://www.ssllabs.com/ssltest/
+
+🔗 https://securityheaders.com/
+
+✅ Bonus (Force HTTPS via .htaccess if needed)
+In /var/www/html/.htaccess:
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
