@@ -62,3 +62,18 @@ Click Install and set options (domain, DB name, admin login)
 | 2006     | Admin Panel (Secure)                    | HTTPS     |
 
 
+-------------------------------------------------------------------------------------------
+SS
+
+![aws ec2](https://github.com/user-attachments/assets/b6794227-6312-41e8-9041-c60d5aad7400)
+![server user](https://github.com/user-attachments/assets/47516bca-78e4-48e6-b6e3-8bff8c25f7fd)
+![enduse](https://github.com/user-attachments/assets/eddbac88-4403-4d84-9a4d-c9e1feffee68)
+![webuzo_Softaculous](https://github.com/user-attachments/assets/a151e792-5234-4dd5-847a-fff0b1dadea3)
+![dns](https://github.com/user-attachments/assets/1c88bc24-28f9-426c-a32b-37b6c91eea8b)
+![list ip](https://github.com/user-attachments/assets/55672a9b-9b2f-4a72-afab-f3de198d6c60)
+![user created](https://github.com/user-attachments/assets/8c8782ed-4248-4ddf-ae00-cd1038463a88)
+![webuzo](https://github.com/user-attachments/assets/8e6def41-1623-428a-b400-5a63c2b87a02)
+
+
+
+
