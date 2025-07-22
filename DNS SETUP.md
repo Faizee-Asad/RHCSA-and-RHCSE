@@ -35,4 +35,14 @@
 
 # DNS Translate
 * Hostname to 192.168.0.12 (called A Record)
-* 
+* 192.168.0.12 to hostname ( called PTR Record)
+* hostname to hostname (Called hostname Record)
+
+# Zones files
+* Forward zone - resolve Domain to IP
+* Reverse zone - resolve IP to Domain
+
+# Here's how to configure your DNS settings on different operating systems.
+* Windows: Go to control panel > Network and internet > Network and sharing center > change adaptor settingd. Right click your network connections, select properties, then select internet protocol version 4 (TCP/IPv4) or internet protocol version 6 (TCP/IPv6) and click properties. here you can set your preferred DNS server.
+* macOS: Go to system perferences > network , select your network interface, click advanced, and go to the DNS tab.you can add you DNS server here.
+* Linux: This depends on your distribution and network manager inteface, click 
